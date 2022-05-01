@@ -10,10 +10,12 @@ const chainMaker = {
   getLength() {
     return this.arr.length;
   },
+
   addLink(value) {
     this.arr.push("( " + value + " )");
     return this;
   },
+
   removeLink(position) {
     const i = position - 1;
     if (this.arr[i] === undefined) {
@@ -23,10 +25,12 @@ const chainMaker = {
     this.arr.splice(i, 1);
     return this;
   },
+
   reverseChain() {
     this.arr.reverse();
     return this;
   },
+
   finishChain() {
     const finishedChain = this.arr.join("~~");
     this.arr = [];
