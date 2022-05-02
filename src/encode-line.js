@@ -33,6 +33,8 @@ const { NotImplementedError } = require('../extensions/index.js');
   return encodedStr.join("");
 }
 
+console.log(encodeLine('abbcca')) //a2b2ca
+
 module.exports = {
   encodeLine
 };
