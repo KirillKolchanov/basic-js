@@ -11,10 +11,29 @@ const { NotImplementedError } = require('../lib');
  *
  */
 
-function encodeLine(/* str */) {
-  // Remove line below and write your code here
-  throw new NotImplementedError('Not implemented');
+ function encodeLine(str) {
+  const encodedStr = []
+  let counter = 0;
+
+  for (let i = 0; i < str.length; i++) {
+
+    counter += 1;
+
+    if (str[i] !== str[i + 1]) {
+    	if (counter === 1) {
+      	encodedStr.push(str[i])
+        counter = 0;
+        continue;
+      }
+      encodedStr.push(counter+str[i])
+      counter = 0
+    }
+  }
+
+  return encodedStr.join("");
 }
+
+console.log(encodeLine('abbcca')) //a2b2ca
 
 module.exports = {
   encodeLine
